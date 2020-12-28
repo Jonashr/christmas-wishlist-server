@@ -14,6 +14,6 @@ app.get('/', (request, response) => {
   response.sendFile(__dirname + '/build/index.html')
 })
 
-const listener = app.listen(process.env.PORT || 3000, function () {
+const listener = app.listen(process.env.PORT || 3001, function () {
   console.log('Your app is listening on port ' + listener.address().port)
 })

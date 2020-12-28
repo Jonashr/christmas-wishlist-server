@@ -13,6 +13,7 @@ const wishlistQueue = []
 
 wishlistRouter.post('/', async(req, res, next) => {
   const body = req.body
+  console.log('WishList', body)
 
   try {
     const users = await axios.get(usersUrl)
@@ -66,7 +67,7 @@ const transporter = nodemailer.createTransport({
 })
 
 
-// The format of the mail is not the prettiest and could be made better, but works fine just for demonstration purposes.
+// The email has no special formatting and exists solely for demonstration purposes.
 
 cron.schedule('*/15 * * * * *', () => {
   console.log('Running cron job')
