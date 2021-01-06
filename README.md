@@ -31,3 +31,27 @@ Feel free to check this out as well!
 **Run tests**
     
     npm test
+
+## Building and Running the Docker Image
+
+Building the image is done by issuing the following Docker command:
+
+    docker build -t someimagetag .
+
+Before running the image you will have you will have to create an ethereal email at [Ethereal email](https://ethereal.email/)
+
+And set the following variables:
+
+    MAIL_USERNAME = The ethereal email you registered
+    MAIL_PASSWORD = The password
+    EMAIL_SENDER = Any.email.sender@email.com
+    EMAIL_RECIPIENT = Any.email.recipient@email.com
+
+Run the container by issuing a command such as:
+    
+    docker run -p 3001:3001 -e MAIL_USERNAME=something@ethereal.email -e MAIL_PASSWORD=something -e EMAIL_SENDER=do_not_reply@something.com -e 
+    EMAIL_RECIPIENT=something@something.com wishlist
+    
+If you login to the ethereal email address you should be receiving a email every 15seconds. For finding valid users to input, check out the URLs in the config.js file.
+
+
