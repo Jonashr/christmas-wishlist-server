@@ -1,5 +1,13 @@
 name: '' #set whatevername you want to your github job
-on: {} # set the events you would like to trigger this job
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ github-workflow, master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch: # set the events you would like to trigger this job
 jobs:
   build:
     runs-on: ubuntu-latest
